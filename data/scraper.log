@@ -1,0 +1,759 @@
+2026-05-25 14:03:01,959 INFO ========== DÉBUT DU PIPELINE ==========
+2026-05-25 14:03:01,960 INFO Étape 1 : extraction en cours...
+2026-05-25 14:03:01,961 DEBUG Simulation URL — nb tiré : 6
+2026-05-25 14:03:01,961 WARNING ⚠️  URL simulée incorrecte (nb=6) → https://boktos.com
+2026-05-25 14:03:01,961 INFO 🚀 Début du scraping — 5 page(s) — base URL : https://boktos.com
+2026-05-25 14:03:01,962 INFO 📖 Scraping page 1/5 → https://boktos.com/index.html
+2026-05-25 14:03:02,000 ERROR ❌ [Page 1] Connexion impossible : https://boktos.com/index.html
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/local/lib/python3.9/socket.py", line 966, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='boktos.com', port=443): Failed to resolve 'boktos.com' ([Errno -2] Name or service not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='boktos.com', port=443): Max retries exceeded with url: /index.html (Caused by NameResolutionError("HTTPSConnection(host='boktos.com', port=443): Failed to resolve 'boktos.com' ([Errno -2] Name or service not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/scraper.py", line 93, in scrape_all_books
+    response = requests.get(page_url, timeout=10)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='boktos.com', port=443): Max retries exceeded with url: /index.html (Caused by NameResolutionError("HTTPSConnection(host='boktos.com', port=443): Failed to resolve 'boktos.com' ([Errno -2] Name or service not known)"))
+2026-05-25 14:03:02,014 INFO 📖 Scraping page 2/5 → https://boktos.com/catalogue/page-2.html
+2026-05-25 14:03:02,019 ERROR ❌ [Page 2] Connexion impossible : https://boktos.com/catalogue/page-2.html
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/local/lib/python3.9/socket.py", line 966, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='boktos.com', port=443): Failed to resolve 'boktos.com' ([Errno -2] Name or service not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='boktos.com', port=443): Max retries exceeded with url: /catalogue/page-2.html (Caused by NameResolutionError("HTTPSConnection(host='boktos.com', port=443): Failed to resolve 'boktos.com' ([Errno -2] Name or service not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/scraper.py", line 93, in scrape_all_books
+    response = requests.get(page_url, timeout=10)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='boktos.com', port=443): Max retries exceeded with url: /catalogue/page-2.html (Caused by NameResolutionError("HTTPSConnection(host='boktos.com', port=443): Failed to resolve 'boktos.com' ([Errno -2] Name or service not known)"))
+2026-05-25 14:03:02,022 INFO 📖 Scraping page 3/5 → https://boktos.com/catalogue/page-3.html
+2026-05-25 14:03:02,026 ERROR ❌ [Page 3] Connexion impossible : https://boktos.com/catalogue/page-3.html
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/local/lib/python3.9/socket.py", line 966, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='boktos.com', port=443): Failed to resolve 'boktos.com' ([Errno -2] Name or service not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='boktos.com', port=443): Max retries exceeded with url: /catalogue/page-3.html (Caused by NameResolutionError("HTTPSConnection(host='boktos.com', port=443): Failed to resolve 'boktos.com' ([Errno -2] Name or service not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/scraper.py", line 93, in scrape_all_books
+    response = requests.get(page_url, timeout=10)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='boktos.com', port=443): Max retries exceeded with url: /catalogue/page-3.html (Caused by NameResolutionError("HTTPSConnection(host='boktos.com', port=443): Failed to resolve 'boktos.com' ([Errno -2] Name or service not known)"))
+2026-05-25 14:03:02,029 INFO 📖 Scraping page 4/5 → https://boktos.com/catalogue/page-4.html
+2026-05-25 14:03:02,033 ERROR ❌ [Page 4] Connexion impossible : https://boktos.com/catalogue/page-4.html
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/local/lib/python3.9/socket.py", line 966, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='boktos.com', port=443): Failed to resolve 'boktos.com' ([Errno -2] Name or service not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='boktos.com', port=443): Max retries exceeded with url: /catalogue/page-4.html (Caused by NameResolutionError("HTTPSConnection(host='boktos.com', port=443): Failed to resolve 'boktos.com' ([Errno -2] Name or service not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/scraper.py", line 93, in scrape_all_books
+    response = requests.get(page_url, timeout=10)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='boktos.com', port=443): Max retries exceeded with url: /catalogue/page-4.html (Caused by NameResolutionError("HTTPSConnection(host='boktos.com', port=443): Failed to resolve 'boktos.com' ([Errno -2] Name or service not known)"))
+2026-05-25 14:03:02,036 INFO 📖 Scraping page 5/5 → https://boktos.com/catalogue/page-5.html
+2026-05-25 14:03:02,041 ERROR ❌ [Page 5] Connexion impossible : https://boktos.com/catalogue/page-5.html
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/local/lib/python3.9/socket.py", line 966, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='boktos.com', port=443): Failed to resolve 'boktos.com' ([Errno -2] Name or service not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='boktos.com', port=443): Max retries exceeded with url: /catalogue/page-5.html (Caused by NameResolutionError("HTTPSConnection(host='boktos.com', port=443): Failed to resolve 'boktos.com' ([Errno -2] Name or service not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/scraper.py", line 93, in scrape_all_books
+    response = requests.get(page_url, timeout=10)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='boktos.com', port=443): Max retries exceeded with url: /catalogue/page-5.html (Caused by NameResolutionError("HTTPSConnection(host='boktos.com', port=443): Failed to resolve 'boktos.com' ([Errno -2] Name or service not known)"))
+2026-05-25 14:03:02,043 INFO ✓ Scraping terminé — 0 livre(s) au total
+2026-05-25 14:03:02,043 INFO Étape 1 terminée — 0 livre(s) extrait(s)
+2026-05-25 14:03:02,044 WARNING ⚠️  Aucun livre extrait — pipeline interrompu sans sauvegarde
+2026-05-25 14:04:01,399 INFO ========== DÉBUT DU PIPELINE ==========
+2026-05-25 14:04:01,399 INFO Étape 1 : extraction en cours...
+2026-05-25 14:04:01,400 DEBUG Simulation URL — nb tiré : 6
+2026-05-25 14:04:01,400 WARNING ⚠️  URL simulée incorrecte (nb=6) → https://boktos.com
+2026-05-25 14:04:01,400 INFO 🚀 Début du scraping — 5 page(s) — base URL : https://boktos.com
+2026-05-25 14:04:01,401 INFO 📖 Scraping page 1/5 → https://boktos.com/index.html
+2026-05-25 14:04:01,437 ERROR ❌ [Page 1] Connexion impossible : https://boktos.com/index.html
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/local/lib/python3.9/socket.py", line 966, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='boktos.com', port=443): Failed to resolve 'boktos.com' ([Errno -2] Name or service not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='boktos.com', port=443): Max retries exceeded with url: /index.html (Caused by NameResolutionError("HTTPSConnection(host='boktos.com', port=443): Failed to resolve 'boktos.com' ([Errno -2] Name or service not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/scraper.py", line 93, in scrape_all_books
+    response = requests.get(page_url, timeout=10)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='boktos.com', port=443): Max retries exceeded with url: /index.html (Caused by NameResolutionError("HTTPSConnection(host='boktos.com', port=443): Failed to resolve 'boktos.com' ([Errno -2] Name or service not known)"))
+2026-05-25 14:04:01,447 INFO 📖 Scraping page 2/5 → https://boktos.com/catalogue/page-2.html
+2026-05-25 14:04:01,455 ERROR ❌ [Page 2] Connexion impossible : https://boktos.com/catalogue/page-2.html
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/local/lib/python3.9/socket.py", line 966, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='boktos.com', port=443): Failed to resolve 'boktos.com' ([Errno -2] Name or service not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='boktos.com', port=443): Max retries exceeded with url: /catalogue/page-2.html (Caused by NameResolutionError("HTTPSConnection(host='boktos.com', port=443): Failed to resolve 'boktos.com' ([Errno -2] Name or service not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/scraper.py", line 93, in scrape_all_books
+    response = requests.get(page_url, timeout=10)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='boktos.com', port=443): Max retries exceeded with url: /catalogue/page-2.html (Caused by NameResolutionError("HTTPSConnection(host='boktos.com', port=443): Failed to resolve 'boktos.com' ([Errno -2] Name or service not known)"))
+2026-05-25 14:04:01,458 INFO 📖 Scraping page 3/5 → https://boktos.com/catalogue/page-3.html
+2026-05-25 14:04:01,474 ERROR ❌ [Page 3] Connexion impossible : https://boktos.com/catalogue/page-3.html
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/local/lib/python3.9/socket.py", line 966, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='boktos.com', port=443): Failed to resolve 'boktos.com' ([Errno -2] Name or service not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='boktos.com', port=443): Max retries exceeded with url: /catalogue/page-3.html (Caused by NameResolutionError("HTTPSConnection(host='boktos.com', port=443): Failed to resolve 'boktos.com' ([Errno -2] Name or service not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/scraper.py", line 93, in scrape_all_books
+    response = requests.get(page_url, timeout=10)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='boktos.com', port=443): Max retries exceeded with url: /catalogue/page-3.html (Caused by NameResolutionError("HTTPSConnection(host='boktos.com', port=443): Failed to resolve 'boktos.com' ([Errno -2] Name or service not known)"))
+2026-05-25 14:04:01,491 INFO 📖 Scraping page 4/5 → https://boktos.com/catalogue/page-4.html
+2026-05-25 14:04:01,502 ERROR ❌ [Page 4] Connexion impossible : https://boktos.com/catalogue/page-4.html
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/local/lib/python3.9/socket.py", line 966, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='boktos.com', port=443): Failed to resolve 'boktos.com' ([Errno -2] Name or service not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='boktos.com', port=443): Max retries exceeded with url: /catalogue/page-4.html (Caused by NameResolutionError("HTTPSConnection(host='boktos.com', port=443): Failed to resolve 'boktos.com' ([Errno -2] Name or service not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/scraper.py", line 93, in scrape_all_books
+    response = requests.get(page_url, timeout=10)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='boktos.com', port=443): Max retries exceeded with url: /catalogue/page-4.html (Caused by NameResolutionError("HTTPSConnection(host='boktos.com', port=443): Failed to resolve 'boktos.com' ([Errno -2] Name or service not known)"))
+2026-05-25 14:04:01,506 INFO 📖 Scraping page 5/5 → https://boktos.com/catalogue/page-5.html
+2026-05-25 14:04:01,512 ERROR ❌ [Page 5] Connexion impossible : https://boktos.com/catalogue/page-5.html
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/local/lib/python3.9/socket.py", line 966, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='boktos.com', port=443): Failed to resolve 'boktos.com' ([Errno -2] Name or service not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 644, in send
+    resp = conn.urlopen(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "/usr/local/lib/python3.9/site-packages/urllib3/util/retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='boktos.com', port=443): Max retries exceeded with url: /catalogue/page-5.html (Caused by NameResolutionError("HTTPSConnection(host='boktos.com', port=443): Failed to resolve 'boktos.com' ([Errno -2] Name or service not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/app/scraper.py", line 93, in scrape_all_books
+    response = requests.get(page_url, timeout=10)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/requests/adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='boktos.com', port=443): Max retries exceeded with url: /catalogue/page-5.html (Caused by NameResolutionError("HTTPSConnection(host='boktos.com', port=443): Failed to resolve 'boktos.com' ([Errno -2] Name or service not known)"))
+2026-05-25 14:04:01,516 INFO ✓ Scraping terminé — 0 livre(s) au total
+2026-05-25 14:04:01,517 INFO Étape 1 terminée — 0 livre(s) extrait(s)
+2026-05-25 14:04:01,517 WARNING ⚠️  Aucun livre extrait — pipeline interrompu sans sauvegarde
+2026-05-25 14:05:02,242 INFO ========== DÉBUT DU PIPELINE ==========
+2026-05-25 14:05:02,242 INFO Étape 1 : extraction en cours...
+2026-05-25 14:05:02,243 DEBUG Simulation URL — nb tiré : 9
+2026-05-25 14:05:02,243 INFO ✓ URL correcte (nb=9) → https://books.toscrape.com
+2026-05-25 14:05:02,244 INFO 🚀 Début du scraping — 5 page(s) — base URL : https://books.toscrape.com
+2026-05-25 14:05:02,244 INFO 📖 Scraping page 1/5 → https://books.toscrape.com/index.html
+2026-05-25 14:05:03,102 INFO    ✓ 20 livre(s) détecté(s) sur la page 1
+2026-05-25 14:05:16,843 INFO 📖 Scraping page 2/5 → https://books.toscrape.com/catalogue/page-2.html
+2026-05-25 14:05:17,613 INFO    ✓ 20 livre(s) détecté(s) sur la page 2
+2026-05-25 14:05:18,160 WARNING Statut HTTP 404 sur https://books.toscrape.com/in-her-wake_980/index.html — catégorie ignorée
+2026-05-25 14:05:18,650 WARNING Statut HTTP 404 sur https://books.toscrape.com/how-music-works_979/index.html — catégorie ignorée
+2026-05-25 14:05:19,019 WARNING Statut HTTP 404 sur https://books.toscrape.com/foolproof-preserving-a-guide-to-small-batch-jams-jellies-pickles-condiments-and-more-a-foolproof-guide-to-making-small-batch-jams-jellies-pickles-condiments-and-more_978/index.html — catégorie ignorée
+2026-05-25 14:05:19,387 WARNING Statut HTTP 404 sur https://books.toscrape.com/chase-me-paris-nights-2_977/index.html — catégorie ignorée
+2026-05-25 14:05:19,756 WARNING Statut HTTP 404 sur https://books.toscrape.com/black-dust_976/index.html — catégorie ignorée
+2026-05-25 14:05:20,141 WARNING Statut HTTP 404 sur https://books.toscrape.com/birdsong-a-story-in-pictures_975/index.html — catégorie ignorée
+2026-05-25 14:05:20,617 WARNING Statut HTTP 404 sur https://books.toscrape.com/americas-cradle-of-quarterbacks-western-pennsylvanias-football-factory-from-johnny-unitas-to-joe-montana_974/index.html — catégorie ignorée
+2026-05-25 14:05:20,986 WARNING Statut HTTP 404 sur https://books.toscrape.com/aladdin-and-his-wonderful-lamp_973/index.html — catégorie ignorée
+2026-05-25 14:05:21,354 WARNING Statut HTTP 404 sur https://books.toscrape.com/worlds-elsewhere-journeys-around-shakespeares-globe_972/index.html — catégorie ignorée
+2026-05-25 14:05:21,723 WARNING Statut HTTP 404 sur https://books.toscrape.com/wall-and-piece_971/index.html — catégorie ignorée
+2026-05-25 14:05:22,092 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-four-agreements-a-practical-guide-to-personal-freedom_970/index.html — catégorie ignorée
+2026-05-25 14:05:22,461 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-five-love-languages-how-to-express-heartfelt-commitment-to-your-mate_969/index.html — catégorie ignorée
+2026-05-25 14:05:22,830 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-elephant-tree_968/index.html — catégorie ignorée
+2026-05-25 14:05:23,212 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-bear-and-the-piano_967/index.html — catégorie ignorée
+2026-05-25 14:05:23,690 WARNING Statut HTTP 404 sur https://books.toscrape.com/sophies-world_966/index.html — catégorie ignorée
+2026-05-25 14:05:24,059 WARNING Statut HTTP 404 sur https://books.toscrape.com/penny-maybe_965/index.html — catégorie ignorée
+2026-05-25 14:05:24,429 WARNING Statut HTTP 404 sur https://books.toscrape.com/maude-1883-1993she-grew-up-with-the-country_964/index.html — catégorie ignorée
+2026-05-25 14:05:24,797 WARNING Statut HTTP 404 sur https://books.toscrape.com/in-a-dark-dark-wood_963/index.html — catégorie ignorée
+2026-05-25 14:05:25,423 WARNING Statut HTTP 404 sur https://books.toscrape.com/behind-closed-doors_962/index.html — catégorie ignorée
+2026-05-25 14:05:25,903 WARNING Statut HTTP 404 sur https://books.toscrape.com/you-cant-bury-them-all-poems_961/index.html — catégorie ignorée
+2026-05-25 14:05:26,906 INFO 📖 Scraping page 3/5 → https://books.toscrape.com/catalogue/page-3.html
+2026-05-25 14:05:27,661 INFO    ✓ 20 livre(s) détecté(s) sur la page 3
+2026-05-25 14:05:28,121 WARNING Statut HTTP 404 sur https://books.toscrape.com/slow-states-of-collapse-poems_960/index.html — catégorie ignorée
+2026-05-25 14:05:28,547 WARNING Statut HTTP 404 sur https://books.toscrape.com/reasons-to-stay-alive_959/index.html — catégorie ignorée
+2026-05-25 14:05:29,105 WARNING Statut HTTP 404 sur https://books.toscrape.com/private-paris-private-10_958/index.html — catégorie ignorée
+2026-05-25 14:05:29,590 WARNING Statut HTTP 404 sur https://books.toscrape.com/higherselfie-wake-up-your-life-free-your-soul-find-your-tribe_957/index.html — catégorie ignorée
+2026-05-25 14:05:30,186 WARNING Statut HTTP 404 sur https://books.toscrape.com/without-borders-wanderlove-1_956/index.html — catégorie ignorée
+2026-05-25 14:05:30,676 WARNING Statut HTTP 404 sur https://books.toscrape.com/when-we-collided_955/index.html — catégorie ignorée
+2026-05-25 14:05:31,189 WARNING Statut HTTP 404 sur https://books.toscrape.com/we-love-you-charlie-freeman_954/index.html — catégorie ignorée
+2026-05-25 14:05:31,804 WARNING Statut HTTP 404 sur https://books.toscrape.com/untitled-collection-sabbath-poems-2014_953/index.html — catégorie ignorée
+2026-05-25 14:05:32,170 WARNING Statut HTTP 404 sur https://books.toscrape.com/unseen-city-the-majesty-of-pigeons-the-discreet-charm-of-snails-other-wonders-of-the-urban-wilderness_952/index.html — catégorie ignorée
+2026-05-25 14:05:32,543 WARNING Statut HTTP 404 sur https://books.toscrape.com/unicorn-tracks_951/index.html — catégorie ignorée
+2026-05-25 14:05:33,159 WARNING Statut HTTP 404 sur https://books.toscrape.com/unbound-how-eight-technologies-made-us-human-transformed-society-and-brought-our-world-to-the-brink_950/index.html — catégorie ignorée
+2026-05-25 14:05:33,623 WARNING Statut HTTP 404 sur https://books.toscrape.com/tsubasa-world-chronicle-2-tsubasa-world-chronicle-2_949/index.html — catégorie ignorée
+2026-05-25 14:05:34,013 WARNING Statut HTTP 404 sur https://books.toscrape.com/throwing-rocks-at-the-google-bus-how-growth-became-the-enemy-of-prosperity_948/index.html — catégorie ignorée
+2026-05-25 14:05:34,382 WARNING Statut HTTP 404 sur https://books.toscrape.com/this-one-summer_947/index.html — catégorie ignorée
+2026-05-25 14:05:34,876 WARNING Statut HTTP 404 sur https://books.toscrape.com/thirst_946/index.html — catégorie ignorée
+2026-05-25 14:05:35,268 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-torch-is-passed-a-harding-family-story_945/index.html — catégorie ignorée
+2026-05-25 14:05:35,842 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-secret-of-dreadwillow-carse_944/index.html — catégorie ignorée
+2026-05-25 14:05:36,348 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-pioneer-woman-cooks-dinnertime-comfort-classics-freezer-food-16-minute-meals-and-other-delicious-ways-to-solve-supper_943/index.html — catégorie ignorée
+2026-05-25 14:05:36,719 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-past-never-ends_942/index.html — catégorie ignorée
+2026-05-25 14:05:37,208 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-natural-history-of-us-the-fine-art-of-pretending-2_941/index.html — catégorie ignorée
+2026-05-25 14:05:38,212 INFO 📖 Scraping page 4/5 → https://books.toscrape.com/catalogue/page-4.html
+2026-05-25 14:05:38,968 INFO    ✓ 20 livre(s) détecté(s) sur la page 4
+2026-05-25 14:05:39,419 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-nameless-city-the-nameless-city-1_940/index.html — catégorie ignorée
+2026-05-25 14:05:39,891 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-murder-that-never-was-forensic-instincts-5_939/index.html — catégorie ignorée
+2026-05-25 14:05:40,405 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-most-perfect-thing-inside-and-outside-a-birds-egg_938/index.html — catégorie ignorée
+2026-05-25 14:05:40,898 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-mindfulness-and-acceptance-workbook-for-anxiety-a-guide-to-breaking-free-from-anxiety-phobias-and-worry-using-acceptance-and-commitment-therapy_937/index.html — catégorie ignorée
+2026-05-25 14:05:41,389 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-life-changing-magic-of-tidying-up-the-japanese-art-of-decluttering-and-organizing_936/index.html — catégorie ignorée
+2026-05-25 14:05:42,044 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-inefficiency-assassin-time-management-tactics-for-working-smarter-not-longer_935/index.html — catégorie ignorée
+2026-05-25 14:05:43,105 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-gutsy-girl-escapades-for-your-life-of-epic-adventure_934/index.html — catégorie ignorée
+2026-05-25 14:05:43,473 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-electric-pencil-drawings-from-inside-state-hospital-no-3_933/index.html — catégorie ignorée
+2026-05-25 14:05:43,842 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-death-of-humanity-and-the-case-for-life_932/index.html — catégorie ignorée
+2026-05-25 14:05:44,334 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-bulletproof-diet-lose-up-to-a-pound-a-day-reclaim-energy-and-focus-upgrade-your-life_931/index.html — catégorie ignorée
+2026-05-25 14:05:44,682 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-art-forger_930/index.html — catégorie ignorée
+2026-05-25 14:05:45,071 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-age-of-genius-the-seventeenth-century-and-the-birth-of-the-modern-mind_929/index.html — catégorie ignorée
+2026-05-25 14:05:45,440 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-activists-tao-te-ching-ancient-advice-for-a-modern-revolution_928/index.html — catégorie ignorée
+2026-05-25 14:05:45,931 WARNING Statut HTTP 404 sur https://books.toscrape.com/spark-joy-an-illustrated-master-class-on-the-art-of-organizing-and-tidying-up_927/index.html — catégorie ignorée
+2026-05-25 14:05:46,299 WARNING Statut HTTP 404 sur https://books.toscrape.com/soul-reader_926/index.html — catégorie ignorée
+2026-05-25 14:05:46,669 WARNING Statut HTTP 404 sur https://books.toscrape.com/security_925/index.html — catégorie ignorée
+2026-05-25 14:05:47,160 WARNING Statut HTTP 404 sur https://books.toscrape.com/saga-volume-6-saga-collected-editions-6_924/index.html — catégorie ignorée
+2026-05-25 14:05:47,651 WARNING Statut HTTP 404 sur https://books.toscrape.com/saga-volume-5-saga-collected-editions-5_923/index.html — catégorie ignorée
+2026-05-25 14:05:48,019 WARNING Statut HTTP 404 sur https://books.toscrape.com/reskilling-america-learning-to-labor-in-the-twenty-first-century_922/index.html — catégorie ignorée
+2026-05-25 14:05:48,513 WARNING Statut HTTP 404 sur https://books.toscrape.com/rat-queens-vol-3-demons-rat-queens-collected-editions-11-15_921/index.html — catégorie ignorée
+2026-05-25 14:05:49,516 INFO 📖 Scraping page 5/5 → https://books.toscrape.com/catalogue/page-5.html
+2026-05-25 14:05:50,281 INFO    ✓ 20 livre(s) détecté(s) sur la page 5
+2026-05-25 14:05:50,727 WARNING Statut HTTP 404 sur https://books.toscrape.com/princess-jellyfish-2-in-1-omnibus-vol-01-princess-jellyfish-2-in-1-omnibus-1_920/index.html — catégorie ignorée
+2026-05-25 14:05:51,093 WARNING Statut HTTP 404 sur https://books.toscrape.com/princess-between-worlds-wide-awake-princess-5_919/index.html — catégorie ignorée
+2026-05-25 14:05:51,463 WARNING Statut HTTP 404 sur https://books.toscrape.com/pop-gun-war-volume-1-gift_918/index.html — catégorie ignorée
+2026-05-25 14:05:51,954 WARNING Statut HTTP 404 sur https://books.toscrape.com/political-suicide-missteps-peccadilloes-bad-calls-backroom-hijinx-sordid-pasts-rotten-breaks-and-just-plain-dumb-mistakes-in-the-annals-of-american-politics_917/index.html — catégorie ignorée
+2026-05-25 14:05:52,423 WARNING Statut HTTP 404 sur https://books.toscrape.com/patience_916/index.html — catégorie ignorée
+2026-05-25 14:05:52,814 WARNING Statut HTTP 404 sur https://books.toscrape.com/outcast-vol-1-a-darkness-surrounds-him-outcast-1_915/index.html — catégorie ignorée
+2026-05-25 14:05:53,183 WARNING Statut HTTP 404 sur https://books.toscrape.com/orange-the-complete-collection-1-orange-the-complete-collection-1_914/index.html — catégorie ignorée
+2026-05-25 14:05:53,674 WARNING Statut HTTP 404 sur https://books.toscrape.com/online-marketing-for-busy-authors-a-step-by-step-guide_913/index.html — catégorie ignorée
+2026-05-25 14:05:54,043 WARNING Statut HTTP 404 sur https://books.toscrape.com/on-a-midnight-clear_912/index.html — catégorie ignorée
+2026-05-25 14:05:54,535 WARNING Statut HTTP 404 sur https://books.toscrape.com/obsidian-lux-1_911/index.html — catégorie ignorée
+2026-05-25 14:05:54,905 WARNING Statut HTTP 404 sur https://books.toscrape.com/my-paris-kitchen-recipes-and-stories_910/index.html — catégorie ignorée
+2026-05-25 14:05:55,409 WARNING Statut HTTP 404 sur https://books.toscrape.com/masks-and-shadows_909/index.html — catégorie ignorée
+2026-05-25 14:05:56,132 WARNING Statut HTTP 404 sur https://books.toscrape.com/mama-tried-traditional-italian-cooking-for-the-screwed-crude-vegan-and-tattooed_908/index.html — catégorie ignorée
+2026-05-25 14:05:56,582 WARNING Statut HTTP 404 sur https://books.toscrape.com/lumberjanes-vol-2-friendship-to-the-max-lumberjanes-5-8_907/index.html — catégorie ignorée
+2026-05-25 14:05:57,360 WARNING Statut HTTP 404 sur https://books.toscrape.com/lumberjanes-vol-1-beware-the-kitten-holy-lumberjanes-1-4_906/index.html — catégorie ignorée
+2026-05-25 14:05:57,732 WARNING Statut HTTP 404 sur https://books.toscrape.com/lumberjanes-vol-3-a-terrible-plan-lumberjanes-9-12_905/index.html — catégorie ignorée
+2026-05-25 14:05:58,103 WARNING Statut HTTP 404 sur https://books.toscrape.com/layered-baking-building-and-styling-spectacular-cakes_904/index.html — catégorie ignorée
+2026-05-25 14:05:58,468 WARNING Statut HTTP 404 sur https://books.toscrape.com/judo-seven-steps-to-black-belt-an-introductory-guide-for-beginners_903/index.html — catégorie ignorée
+2026-05-25 14:05:58,836 WARNING Statut HTTP 404 sur https://books.toscrape.com/join_902/index.html — catégorie ignorée
+2026-05-25 14:05:59,205 WARNING Statut HTTP 404 sur https://books.toscrape.com/in-the-country-we-love-my-family-divided_901/index.html — catégorie ignorée
+2026-05-25 14:06:00,208 INFO ✓ Scraping terminé — 100 livre(s) au total
+2026-05-25 14:06:00,210 INFO Étape 1 terminée — 100 livre(s) extrait(s)
+2026-05-25 14:06:00,213 INFO Étape 2 : transformation en cours...
+2026-05-25 14:06:00,215 INFO Étape 2 terminée — 100 livre(s) transformé(s)
+2026-05-25 14:06:00,215 INFO Étape 3 : sauvegarde en cours...
+2026-05-25 14:06:00,229 DEBUG En-tête CSV créé dans /data/books.csv
+2026-05-25 14:06:00,231 INFO 100 livre(s) sauvegardé(s) dans /data/books.csv
+2026-05-25 14:06:00,236 INFO Étape 3 terminée — fichier CSV mis à jour
+2026-05-25 14:06:00,237 INFO ========== PIPELINE TERMINÉ ==========
+2026-05-25 14:06:01,499 INFO ========== DÉBUT DU PIPELINE ==========
+2026-05-25 14:06:01,499 INFO Étape 1 : extraction en cours...
+2026-05-25 14:06:01,500 DEBUG Simulation URL — nb tiré : 3
+2026-05-25 14:06:01,500 INFO ✓ URL correcte (nb=3) → https://books.toscrape.com
+2026-05-25 14:06:01,500 INFO 🚀 Début du scraping — 5 page(s) — base URL : https://books.toscrape.com
+2026-05-25 14:06:01,501 INFO 📖 Scraping page 1/5 → https://books.toscrape.com/index.html
+2026-05-25 14:06:02,202 INFO    ✓ 20 livre(s) détecté(s) sur la page 1
+2026-05-25 14:06:16,225 INFO 📖 Scraping page 2/5 → https://books.toscrape.com/catalogue/page-2.html
+2026-05-25 14:06:16,932 INFO    ✓ 20 livre(s) détecté(s) sur la page 2
+2026-05-25 14:06:17,388 WARNING Statut HTTP 404 sur https://books.toscrape.com/in-her-wake_980/index.html — catégorie ignorée
+2026-05-25 14:06:17,756 WARNING Statut HTTP 404 sur https://books.toscrape.com/how-music-works_979/index.html — catégorie ignorée
+2026-05-25 14:06:18,125 WARNING Statut HTTP 404 sur https://books.toscrape.com/foolproof-preserving-a-guide-to-small-batch-jams-jellies-pickles-condiments-and-more-a-foolproof-guide-to-making-small-batch-jams-jellies-pickles-condiments-and-more_978/index.html — catégorie ignorée
+2026-05-25 14:06:18,495 WARNING Statut HTTP 404 sur https://books.toscrape.com/chase-me-paris-nights-2_977/index.html — catégorie ignorée
+2026-05-25 14:06:18,863 WARNING Statut HTTP 404 sur https://books.toscrape.com/black-dust_976/index.html — catégorie ignorée
+2026-05-25 14:06:19,232 WARNING Statut HTTP 404 sur https://books.toscrape.com/birdsong-a-story-in-pictures_975/index.html — catégorie ignorée
+2026-05-25 14:06:19,600 WARNING Statut HTTP 404 sur https://books.toscrape.com/americas-cradle-of-quarterbacks-western-pennsylvanias-football-factory-from-johnny-unitas-to-joe-montana_974/index.html — catégorie ignorée
+2026-05-25 14:06:19,971 WARNING Statut HTTP 404 sur https://books.toscrape.com/aladdin-and-his-wonderful-lamp_973/index.html — catégorie ignorée
+2026-05-25 14:06:20,337 WARNING Statut HTTP 404 sur https://books.toscrape.com/worlds-elsewhere-journeys-around-shakespeares-globe_972/index.html — catégorie ignorée
+2026-05-25 14:06:20,707 WARNING Statut HTTP 404 sur https://books.toscrape.com/wall-and-piece_971/index.html — catégorie ignorée
+2026-05-25 14:06:21,075 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-four-agreements-a-practical-guide-to-personal-freedom_970/index.html — catégorie ignorée
+2026-05-25 14:06:21,445 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-five-love-languages-how-to-express-heartfelt-commitment-to-your-mate_969/index.html — catégorie ignorée
+2026-05-25 14:06:21,805 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-elephant-tree_968/index.html — catégorie ignorée
+2026-05-25 14:06:22,182 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-bear-and-the-piano_967/index.html — catégorie ignorée
+2026-05-25 14:06:22,551 WARNING Statut HTTP 404 sur https://books.toscrape.com/sophies-world_966/index.html — catégorie ignorée
+2026-05-25 14:06:23,043 WARNING Statut HTTP 404 sur https://books.toscrape.com/penny-maybe_965/index.html — catégorie ignorée
+2026-05-25 14:06:23,412 WARNING Statut HTTP 404 sur https://books.toscrape.com/maude-1883-1993she-grew-up-with-the-country_964/index.html — catégorie ignorée
+2026-05-25 14:06:23,780 WARNING Statut HTTP 404 sur https://books.toscrape.com/in-a-dark-dark-wood_963/index.html — catégorie ignorée
+2026-05-25 14:06:24,149 WARNING Statut HTTP 404 sur https://books.toscrape.com/behind-closed-doors_962/index.html — catégorie ignorée
+2026-05-25 14:06:24,518 WARNING Statut HTTP 404 sur https://books.toscrape.com/you-cant-bury-them-all-poems_961/index.html — catégorie ignorée
+2026-05-25 14:06:25,521 INFO 📖 Scraping page 3/5 → https://books.toscrape.com/catalogue/page-3.html
+2026-05-25 14:06:26,285 INFO    ✓ 20 livre(s) détecté(s) sur la page 3
+2026-05-25 14:06:26,854 WARNING Statut HTTP 404 sur https://books.toscrape.com/slow-states-of-collapse-poems_960/index.html — catégorie ignorée
+2026-05-25 14:06:27,346 WARNING Statut HTTP 404 sur https://books.toscrape.com/reasons-to-stay-alive_959/index.html — catégorie ignorée
+2026-05-25 14:06:27,830 WARNING Statut HTTP 404 sur https://books.toscrape.com/private-paris-private-10_958/index.html — catégorie ignorée
+2026-05-25 14:06:28,330 WARNING Statut HTTP 404 sur https://books.toscrape.com/higherselfie-wake-up-your-life-free-your-soul-find-your-tribe_957/index.html — catégorie ignorée
+2026-05-25 14:06:28,820 WARNING Statut HTTP 404 sur https://books.toscrape.com/without-borders-wanderlove-1_956/index.html — catégorie ignorée
+2026-05-25 14:06:29,188 WARNING Statut HTTP 404 sur https://books.toscrape.com/when-we-collided_955/index.html — catégorie ignorée
+2026-05-25 14:06:29,556 WARNING Statut HTTP 404 sur https://books.toscrape.com/we-love-you-charlie-freeman_954/index.html — catégorie ignorée
+2026-05-25 14:06:29,925 WARNING Statut HTTP 404 sur https://books.toscrape.com/untitled-collection-sabbath-poems-2014_953/index.html — catégorie ignorée
+2026-05-25 14:06:30,294 WARNING Statut HTTP 404 sur https://books.toscrape.com/unseen-city-the-majesty-of-pigeons-the-discreet-charm-of-snails-other-wonders-of-the-urban-wilderness_952/index.html — catégorie ignorée
+2026-05-25 14:06:30,663 WARNING Statut HTTP 404 sur https://books.toscrape.com/unicorn-tracks_951/index.html — catégorie ignorée
+2026-05-25 14:06:31,158 WARNING Statut HTTP 404 sur https://books.toscrape.com/unbound-how-eight-technologies-made-us-human-transformed-society-and-brought-our-world-to-the-brink_950/index.html — catégorie ignorée
+2026-05-25 14:06:31,650 WARNING Statut HTTP 404 sur https://books.toscrape.com/tsubasa-world-chronicle-2-tsubasa-world-chronicle-2_949/index.html — catégorie ignorée
+2026-05-25 14:06:32,137 WARNING Statut HTTP 404 sur https://books.toscrape.com/throwing-rocks-at-the-google-bus-how-growth-became-the-enemy-of-prosperity_948/index.html — catégorie ignorée
+2026-05-25 14:06:32,631 WARNING Statut HTTP 404 sur https://books.toscrape.com/this-one-summer_947/index.html — catégorie ignorée
+2026-05-25 14:06:33,005 WARNING Statut HTTP 404 sur https://books.toscrape.com/thirst_946/index.html — catégorie ignorée
+2026-05-25 14:06:33,612 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-torch-is-passed-a-harding-family-story_945/index.html — catégorie ignorée
+2026-05-25 14:06:34,104 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-secret-of-dreadwillow-carse_944/index.html — catégorie ignorée
+2026-05-25 14:06:34,720 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-pioneer-woman-cooks-dinnertime-comfort-classics-freezer-food-16-minute-meals-and-other-delicious-ways-to-solve-supper_943/index.html — catégorie ignorée
+2026-05-25 14:06:35,216 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-past-never-ends_942/index.html — catégorie ignorée
+2026-05-25 14:06:35,823 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-natural-history-of-us-the-fine-art-of-pretending-2_941/index.html — catégorie ignorée
+2026-05-25 14:06:36,827 INFO 📖 Scraping page 4/5 → https://books.toscrape.com/catalogue/page-4.html
+2026-05-25 14:06:37,901 INFO    ✓ 20 livre(s) détecté(s) sur la page 4
+2026-05-25 14:06:38,403 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-nameless-city-the-nameless-city-1_940/index.html — catégorie ignorée
+2026-05-25 14:06:38,895 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-murder-that-never-was-forensic-instincts-5_939/index.html — catégorie ignorée
+2026-05-25 14:06:39,508 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-most-perfect-thing-inside-and-outside-a-birds-egg_938/index.html — catégorie ignorée
+2026-05-25 14:06:40,123 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-mindfulness-and-acceptance-workbook-for-anxiety-a-guide-to-breaking-free-from-anxiety-phobias-and-worry-using-acceptance-and-commitment-therapy_937/index.html — catégorie ignorée
+2026-05-25 14:06:40,619 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-life-changing-magic-of-tidying-up-the-japanese-art-of-decluttering-and-organizing_936/index.html — catégorie ignorée
+2026-05-25 14:06:41,109 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-inefficiency-assassin-time-management-tactics-for-working-smarter-not-longer_935/index.html — catégorie ignorée
+2026-05-25 14:06:41,599 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-gutsy-girl-escapades-for-your-life-of-epic-adventure_934/index.html — catégorie ignorée
+2026-05-25 14:06:42,066 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-electric-pencil-drawings-from-inside-state-hospital-no-3_933/index.html — catégorie ignorée
+2026-05-25 14:06:42,584 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-death-of-humanity-and-the-case-for-life_932/index.html — catégorie ignorée
+2026-05-25 14:06:43,072 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-bulletproof-diet-lose-up-to-a-pound-a-day-reclaim-energy-and-focus-upgrade-your-life_931/index.html — catégorie ignorée
+2026-05-25 14:06:43,564 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-art-forger_930/index.html — catégorie ignorée
+2026-05-25 14:06:44,055 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-age-of-genius-the-seventeenth-century-and-the-birth-of-the-modern-mind_929/index.html — catégorie ignorée
+2026-05-25 14:06:44,423 WARNING Statut HTTP 404 sur https://books.toscrape.com/the-activists-tao-te-ching-ancient-advice-for-a-modern-revolution_928/index.html — catégorie ignorée
+2026-05-25 14:06:44,917 WARNING Statut HTTP 404 sur https://books.toscrape.com/spark-joy-an-illustrated-master-class-on-the-art-of-organizing-and-tidying-up_927/index.html — catégorie ignorée
+2026-05-25 14:06:45,405 WARNING Statut HTTP 404 sur https://books.toscrape.com/soul-reader_926/index.html — catégorie ignorée
+2026-05-25 14:06:45,898 WARNING Statut HTTP 404 sur https://books.toscrape.com/security_925/index.html — catégorie ignorée
+2026-05-25 14:06:46,265 WARNING Statut HTTP 404 sur https://books.toscrape.com/saga-volume-6-saga-collected-editions-6_924/index.html — catégorie ignorée
+2026-05-25 14:06:46,634 WARNING Statut HTTP 404 sur https://books.toscrape.com/saga-volume-5-saga-collected-editions-5_923/index.html — catégorie ignorée
+2026-05-25 14:06:47,249 WARNING Statut HTTP 404 sur https://books.toscrape.com/reskilling-america-learning-to-labor-in-the-twenty-first-century_922/index.html — catégorie ignorée
+2026-05-25 14:06:47,888 WARNING Statut HTTP 404 sur https://books.toscrape.com/rat-queens-vol-3-demons-rat-queens-collected-editions-11-15_921/index.html — catégorie ignorée
+2026-05-25 14:06:48,913 INFO 📖 Scraping page 5/5 → https://books.toscrape.com/catalogue/page-5.html
+2026-05-25 14:06:49,767 INFO    ✓ 20 livre(s) détecté(s) sur la page 5
+2026-05-25 14:06:50,322 WARNING Statut HTTP 404 sur https://books.toscrape.com/princess-jellyfish-2-in-1-omnibus-vol-01-princess-jellyfish-2-in-1-omnibus-1_920/index.html — catégorie ignorée
+2026-05-25 14:06:50,822 WARNING Statut HTTP 404 sur https://books.toscrape.com/princess-between-worlds-wide-awake-princess-5_919/index.html — catégorie ignorée
+2026-05-25 14:06:51,431 WARNING Statut HTTP 404 sur https://books.toscrape.com/pop-gun-war-volume-1-gift_918/index.html — catégorie ignorée
+2026-05-25 14:06:51,919 WARNING Statut HTTP 404 sur https://books.toscrape.com/political-suicide-missteps-peccadilloes-bad-calls-backroom-hijinx-sordid-pasts-rotten-breaks-and-just-plain-dumb-mistakes-in-the-annals-of-american-politics_917/index.html — catégorie ignorée
+2026-05-25 14:06:52,412 WARNING Statut HTTP 404 sur https://books.toscrape.com/patience_916/index.html — catégorie ignorée
+2026-05-25 14:06:52,946 WARNING Statut HTTP 404 sur https://books.toscrape.com/outcast-vol-1-a-darkness-surrounds-him-outcast-1_915/index.html — catégorie ignorée
+2026-05-25 14:06:53,516 WARNING Statut HTTP 404 sur https://books.toscrape.com/orange-the-complete-collection-1-orange-the-complete-collection-1_914/index.html — catégorie ignorée
+2026-05-25 14:06:53,885 WARNING Statut HTTP 404 sur https://books.toscrape.com/online-marketing-for-busy-authors-a-step-by-step-guide_913/index.html — catégorie ignorée
+2026-05-25 14:06:54,254 WARNING Statut HTTP 404 sur https://books.toscrape.com/on-a-midnight-clear_912/index.html — catégorie ignorée
+2026-05-25 14:06:54,623 WARNING Statut HTTP 404 sur https://books.toscrape.com/obsidian-lux-1_911/index.html — catégorie ignorée
+2026-05-25 14:06:55,115 WARNING Statut HTTP 404 sur https://books.toscrape.com/my-paris-kitchen-recipes-and-stories_910/index.html — catégorie ignorée
+2026-05-25 14:06:55,608 WARNING Statut HTTP 404 sur https://books.toscrape.com/masks-and-shadows_909/index.html — catégorie ignorée
+2026-05-25 14:06:55,974 WARNING Statut HTTP 404 sur https://books.toscrape.com/mama-tried-traditional-italian-cooking-for-the-screwed-crude-vegan-and-tattooed_908/index.html — catégorie ignorée
+2026-05-25 14:06:56,344 WARNING Statut HTTP 404 sur https://books.toscrape.com/lumberjanes-vol-2-friendship-to-the-max-lumberjanes-5-8_907/index.html — catégorie ignorée
