@@ -16,7 +16,7 @@ Démontrer un pipeline de données robuste avec :
 
 ## ✨ Fonctionnalités
 
-✅ **Scraping automatisé** : Récupère ~40 livres (2 pages) par exécution
+✅ **Scraping automatisé** : Récupère ~40 livres (2 pages) par exécution. Vous pouvez modifier dans le main le nombre souhaité.
 
 ✅ **4 niveaux de protection** :
 - Vérification de la requête HTTP
